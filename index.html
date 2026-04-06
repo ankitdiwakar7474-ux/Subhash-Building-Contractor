@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subhash Building Contractor And – Premium Tile & Stone Works</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream:    #F5F0E8;
+      --dark:     #1A1611;
+      --brown:    #7C5C3E;
+      --gold:     #C8974A;
+      --warm:     #E8D5B8;
+      --muted:    #6B5D4F;
+      --surface:  #2A2218;
+      --green:    #25D366;
+      --wa-dark:  #128C7E;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(26,22,17,0.96);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw;
+      height: 70px;
+      border-bottom: 1px solid rgba(200,151,74,0.25);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+    }
+    .nav-brand span { color: var(--cream); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--warm);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.15s;
+    }
+    .nav-cta:hover { background: #d4a85c; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 0 5vw;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 40%, rgba(200,151,74,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 10% 80%, rgba(124,92,62,0.2) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image:
+        linear-gradient(var(--gold) 1px, transparent 1px),
+        linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; max-width: 700px; }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+      margin-top: 100px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
+    .hero-title em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      color: rgba(245,240,232,0.6);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.45s ease both; }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 0.85rem 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-gold:hover { background: #d4a85c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,151,74,0.35); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(245,240,232,0.4);
+      padding: 0.85rem 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 5vw; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--dark);
+    }
+    .section-title span { color: var(--brown); }
+    .divider {
+      width: 60px; height: 2px;
+      background: var(--gold);
+      margin: 1rem auto 1.5rem;
+    }
+    .section-sub { color: var(--muted); font-size: 0.95rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    /* ─── TILES GRID ─── */
+    #catalogue { background: #fff; }
+    .cat-tabs {
+      display: flex; justify-content: center; gap: 0.5rem;
+      flex-wrap: wrap; margin-bottom: 3rem;
+    }
+    .tab-btn {
+      border: 1.5px solid var(--warm);
+      background: transparent;
+      color: var(--muted);
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.83rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.22s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: var(--gold);
+    }
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+    .tile-card {
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--cream);
+      border: 1px solid var(--warm);
+      transition: transform 0.28s, box-shadow 0.28s;
+      cursor: pointer;
+    }
+    .tile-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 48px rgba(26,22,17,0.12);
+    }
+    .tile-img {
+      width: 100%; height: 200px; object-fit: cover;
+      display: block;
+      background: var(--warm);
+      position: relative;
+    }
+    .tile-swatch {
+      width: 100%; height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+    }
+    .tile-badge {
+      position: absolute; top: 12px; right: 12px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.7rem;
+      border-radius: 2px;
+    }
+    .tile-body { padding: 1.2rem 1.3rem 1.4rem; }
+    .tile-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+    }
+    .tile-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 0.9rem; }
+    .tile-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--brown);
+    }
+    .tile-price span {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .tile-category { display: none; }
+
+    /* ─── CONTACT BUTTONS ─── */
+    #connect { background: var(--dark); }
+    #connect .section-title { color: var(--cream); }
+    #connect .section-tag, #connect .section-title span { color: var(--gold); }
+    #connect .section-sub { color: rgba(245,240,232,0.55); }
+    #connect .divider { background: var(--gold); }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px; margin: 0 auto;
+    }
+    .connect-card {
+      background: var(--surface);
+      border: 1px solid rgba(200,151,74,0.2);
+      border-radius: 6px;
+      padding: 2rem 1.8rem;
+      text-align: center;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .connect-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .cc-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .cc-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .cc-value { color: var(--cream); font-size: 0.92rem; margin-bottom: 1.4rem; word-break: break-all; }
+    .cc-btn {
+      display: inline-block;
+      padding: 0.6rem 1.6rem;
+      border-radius: 2px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.22s;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .cc-btn-wa  { background: var(--green); color: #fff; }
+    .cc-btn-wa:hover  { background: var(--wa-dark); }
+    .cc-btn-mail { background: var(--gold); color: var(--dark); }
+    .cc-btn-mail:hover { background: #d4a85c; }
+    .cc-btn-ig { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+    .cc-btn-ig:hover { opacity: 0.88; }
+
+    /* ─── PROBLEM FORM ─── */
+    #problem { background: var(--cream); }
+    .form-wrap {
+      max-width: 680px; margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--warm);
+      border-radius: 6px;
+      padding: 2.8rem 3rem;
+      box-shadow: 0 8px 40px rgba(26,22,17,0.07);
+    }
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      border: 1.5px solid var(--warm);
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--dark);
+      background: var(--cream);
+      transition: border-color 0.22s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .form-submit-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.8rem; }
+
+    .btn-wa-send {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: all 0.22s;
+    }
+    .btn-wa-send:hover { background: var(--wa-dark); transform: translateY(-2px); }
+
+    .form-note { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; }
+
+    /* ─── ABOUT / INFO ─── */
+    #about { background: var(--surface); }
+    #about .section-title { color: var(--cream); }
+    #about .section-tag, #about .section-title span { color: var(--gold); }
+    #about .section-sub { color: rgba(245,240,232,0.55); }
+    #about .divider { background: var(--gold); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px; margin: 0 auto;
+      align-items: start;
+    }
+    .about-text { color: rgba(245,240,232,0.75); line-height: 1.85; font-size: 0.95rem; }
+    .about-text p { margin-bottom: 1.2rem; }
+    .about-text strong { color: var(--gold); }
+    .info-list { list-style: none; }
+    .info-list li {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid rgba(200,151,74,0.12);
+      transition: background 0.2s;
+    }
+    .info-list li:first-child { border-top: 1px solid rgba(200,151,74,0.12); }
+    .info-list li:hover { background: rgba(200,151,74,0.05); }
+    .il-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .il-label { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.2rem; }
+    .il-val { color: var(--cream); font-size: 0.95rem; }
+    .il-val a { color: var(--cream); text-decoration: none; }
+    .il-val a:hover { color: var(--gold); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(200,151,74,0.18);
+      text-align: center;
+      padding: 2rem 5vw;
+      color: rgba(245,240,232,0.35);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    footer span { color: var(--gold); }
+
+    /* ─── FLOATING WA ─── */
+    .float-wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: var(--green);
+      color: #fff;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .float-wa:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,0.6); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-wrap { padding: 2rem 1.4rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <div class="nav-brand">Subhash <span>Tile Works</span></div>
+  <ul class="nav-links">
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#connect">Contact</a></li>
+    <li><a href="#problem">Get Quote</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('problem').scrollIntoView({behavior:'smooth'})">Get Quote</button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Premium Tile & Stone Contractor</div>
+    <h1 class="hero-title">Transform Your Space with <em>Timeless Stone</em></h1>
+    <p class="hero-sub">Expert installation of tiles, marbles & granites. We bring world-class craftsmanship right to your doorstep — on time, every time.</p>
+    <div class="hero-btns">
+      <a href="#catalogue" class="btn-gold">🪨 Browse Catalogue</a>
+      <a href="https://wa.me/919815124756?text=Hi%20Ankit%2C%20I%20want%20to%20enquire%20about%20tiles." target="_blank" class="btn-outline">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CATALOGUE ═══ -->
+<section id="catalogue">
+  <div class="section-header">
+    <div class="section-tag">Our Collection</div>
+    <h2 class="section-title">Tiles, Marbles & <span>Granites</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Handpicked materials with current market prices per square foot. All prices are indicative and subject to quantity.</p>
+  </div>
+
+  <div class="cat-tabs">
+    <button class="tab-btn active" onclick="filterCat('all',this)">All</button>
+    <button class="tab-btn" onclick="filterCat('tile',this)">Tiles</button>
+    <button class="tab-btn" onclick="filterCat('marble',this)">Marble</button>
+    <button class="tab-btn" onclick="filterCat('granite',this)">Granite</button>
+  </div>
+
+  <div class="tiles-grid" id="tilesGrid">
+
+    <!-- TILES -->
+    <div class="tile-card" data-cat="tile">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#e8e0d4,#d4c8bc);">
+        <span>🏠</span>
+        <div class="tile-badge">Tile</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Ivory Ceramic Floor Tile</div>
+        <div class="tile-desc">Classic ivory finish, 24×24 inch. Ideal for living rooms & corridors.</div>
+        <div class="tile-price">₹ 32 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="tile">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#5c5c5c,#3a3a3a);">
+        <span>⬛</span>
+        <div class="tile-badge">Tile</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Charcoal Matt Vitrified</div>
+        <div class="tile-desc">Non-slip matte finish, perfect for bathrooms & outdoor areas.</div>
+        <div class="tile-price">₹ 48 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="tile">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#f0e6d3,#e8d5b0);">
+        <span>🌿</span>
+        <div class="tile-badge">Tile</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Wood-Look Porcelain</div>
+        <div class="tile-desc">High-res wood texture on durable porcelain. Warm & contemporary.</div>
+        <div class="tile-price">₹ 65 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="tile">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#c8d8e8,#a0b8d0);">
+        <span>💎</span>
+        <div class="tile-badge">Tile</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Glossy Polished Vitrified</div>
+        <div class="tile-desc">Mirror-like gloss, 32×32 inch. Brightens any space instantly.</div>
+        <div class="tile-price">₹ 55 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="tile">
+      <div class="tile-swatch" style="background:repeating-conic-gradient(#d4b896 0% 25%, #c8a882 0% 50%) 0 0/30px 30px;">
+        <div class="tile-badge">Tile</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Terracotta Mosaic</div>
+        <div class="tile-desc">Hand-finished mosaic tiles. Perfect for feature walls & kitchen backsplash.</div>
+        <div class="tile-price">₹ 85 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <!-- MARBLES -->
+    <div class="tile-card" data-cat="marble">
+      <div class="tile-swatch" style="background:linear-gradient(120deg,#f8f4f0 30%,#e8e0d8 60%,#f8f4f0 100%);">
+        <span>🤍</span>
+        <div class="tile-badge">Marble</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Makrana White Marble</div>
+        <div class="tile-desc">Pristine white with subtle grey veins. The gold standard in Indian marble.</div>
+        <div class="tile-price">₹ 120 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="marble">
+      <div class="tile-swatch" style="background:linear-gradient(120deg,#f0e8d8 20%,#d8c8a8 50%,#f0e8d8 100%);">
+        <span>🟡</span>
+        <div class="tile-badge">Marble</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Jaisalmer Yellow Marble</div>
+        <div class="tile-desc">Warm golden-yellow hues. Stunning for flooring & wall cladding.</div>
+        <div class="tile-price">₹ 95 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="marble">
+      <div class="tile-swatch" style="background:linear-gradient(120deg,#1a1a1a 20%,#3a3a3a 60%,#1a1a1a 100%);">
+        <span>🖤</span>
+        <div class="tile-badge">Marble</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Black Marquina Marble</div>
+        <div class="tile-desc">Rich black with white veins. Luxurious choice for premium interiors.</div>
+        <div class="tile-price">₹ 180 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="marble">
+      <div class="tile-swatch" style="background:linear-gradient(120deg,#e8d0c8 20%,#c8a090 60%,#e8d0c8 100%);">
+        <span>🌸</span>
+        <div class="tile-badge">Marble</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Pink Dholpur Marble</div>
+        <div class="tile-desc">Soft rose-pink marble. Elegant for bedrooms & bathrooms.</div>
+        <div class="tile-price">₹ 110 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <!-- GRANITES -->
+    <div class="tile-card" data-cat="granite">
+      <div class="tile-swatch" style="background:repeating-linear-gradient(45deg,#2a2a2a 0,#2a2a2a 2px,#3d3d3d 2px,#3d3d3d 10px);">
+        <span>⚫</span>
+        <div class="tile-badge">Granite</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Black Galaxy Granite</div>
+        <div class="tile-desc">Black base with golden speckles. Dramatic & durable for countertops.</div>
+        <div class="tile-price">₹ 75 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="granite">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#c8a882,#b89060,#d4b490);">
+        <span>🟤</span>
+        <div class="tile-badge">Granite</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Tan Brown Granite</div>
+        <div class="tile-desc">Earthy brown with black crystals. Popular for kitchen slabs & staircases.</div>
+        <div class="tile-price">₹ 60 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="granite">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#e8e0d0,#d0c8b8,#e8e0d0);">
+        <span>🪨</span>
+        <div class="tile-badge">Granite</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Kashmir White Granite</div>
+        <div class="tile-desc">Off-white with grey & burgundy minerals. Versatile & timeless.</div>
+        <div class="tile-price">₹ 90 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+    <div class="tile-card" data-cat="granite">
+      <div class="tile-swatch" style="background:linear-gradient(135deg,#4a6a4a,#385038,#4a6a4a);">
+        <span>🟢</span>
+        <div class="tile-badge">Granite</div>
+      </div>
+      <div class="tile-body">
+        <div class="tile-name">Vizag Blue Granite</div>
+        <div class="tile-desc">Deep blue-green granite from Andhra Pradesh. Excellent for facades.</div>
+        <div class="tile-price">₹ 82 <span>/ sq ft</span></div>
+      </div>
+    </div>
+
+  </div><!-- /tiles-grid -->
+</section>
+
+<!-- ═══ CONNECT ═══ -->
+<section id="connect">
+  <div class="section-header">
+    <div class="section-tag">Reach Out</div>
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Choose your preferred way to reach us. We respond quickly!</p>
+  </div>
+  <div class="connect-grid">
+    <div class="connect-card">
+      <span class="cc-icon">📱</span>
+      <div class="cc-label">WhatsApp</div>
+      <div class="cc-value">+91 98151 24756</div>
+      <a href="https://wa.me/919815124756?text=Hello%2C%20I%20need%20tile%20services." target="_blank" class="cc-btn cc-btn-wa">💬 Chat on WhatsApp</a>
+    </div>
+    <div class="connect-card">
+      <span class="cc-icon">✉️</span>
+      <div class="cc-label">Email</div>
+      <div class="cc-value">subhashchandra96605@gmail.com</div>
+      <a href="mailto:subhashchandra96605@gmail.com" class="cc-btn cc-btn-mail">📧 Send Email</a>
+    </div>
+    <div class="connect-card">
+      <span class="cc-icon">📸</span>
+      <div class="cc-label">Instagram</div>
+      <div class="cc-value">@ankitdiwakar96605</div>
+      <a href="https://instagram.com/ankitdiwakar96605" target="_blank" class="cc-btn cc-btn-ig">Follow & DM</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROBLEM FORM ═══ -->
+<section id="problem">
+  <div class="section-header">
+    <div class="section-tag">Free Consultation</div>
+    <h2 class="section-title">Describe Your <span>Requirement</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Fill in your details and we'll get back to you with a tailored quote. Hit "Send on WhatsApp" to connect instantly.</p>
+  </div>
+
+  <div class="form-wrap">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" placeholder="e.g. Ramesh Kumar" />
+      </div>
+      <div class="form-group">
+        <label for="fphone">Phone Number</label>
+        <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="faddress">Address / Location</label>
+      <input type="text" id="faddress" placeholder="House No, Street, City, State" />
+    </div>
+    <div class="form-group">
+      <label for="fproblem">Your Requirement / Problem</label>
+      <textarea id="fproblem" placeholder="Describe what work you need — e.g. 'I need tiles for a 300 sq ft living room, prefer white marble look...'"></textarea>
+    </div>
+    <p class="form-note">⚡ Your message will be pre-filled in WhatsApp — just hit Send!</p>
+    <div class="form-submit-row">
+      <button class="btn-wa-send" onclick="sendWhatsApp()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.844L0 24l6.332-1.496C8.07 23.447 10.003 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.96 0-3.778-.53-5.332-1.449l-.383-.228-3.954.934.992-3.851-.249-.395C2.043 15.108 1.455 13.624 1.455 12 1.455 6.144 6.144 1.455 12 1.455S22.545 6.144 22.545 12 17.856 22.545 12 22.545z"/></svg>
+        Send on WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-tag">About Us</div>
+    <h2 class="section-title">Personal <span>Information</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">A trusted name in tile & stone installation, serving homes and businesses with quality and care.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Welcome to <strong>Ankit Tile Works</strong> — your reliable partner for all tile, marble, and granite flooring and wall cladding needs.</p>
+      <p>With years of hands-on experience, we specialize in residential and commercial projects — from kitchens and bathrooms to showrooms and office lobbies. We source only the finest materials at competitive prices.</p>
+      <p>Whether you're renovating a single room or building from scratch, we bring <strong>craftsmanship, punctuality, and honest pricing</strong> to every project.</p>
+      <p>Reach out today for a <strong>free site visit and quote</strong>. We're just a WhatsApp message away.</p>
+    </div>
+
+    <ul class="info-list">
+      <li>
+        <span class="il-icon">📱</span>
+        <div>
+          <div class="il-label">Mobile / WhatsApp</div>
+          <div class="il-val"><a href="tel:+919815124756">+91 98151 24756</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="il-icon">✉️</span>
+        <div>
+          <div class="il-label">Email ID</div>
+          <div class="il-val"><a href="mailto:subhashchandra96605@gmail.com">subhashchandra96605@gmail.com</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="il-icon">📸</span>
+        <div>
+          <div class="il-label">Instagram</div>
+          <div class="il-val"><a href="https://instagram.com/ankitdiwakar96605" target="_blank">@ankitdiwakar96605</a></div>
+        </div>
+      </li>
+      <li>
+        <span class="il-icon">🕐</span>
+        <div>
+          <div class="il-label">Working Hours</div>
+          <div class="il-val">Mon – Sat &nbsp;|&nbsp; 9:00 AM – 7:00 PM</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>© 2025 <span>Subhash Tile Works</span>. Crafted with ❤️ | +91 98151 24756 | subhashchandra96605@gmail.com</p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919815124756?text=Hello%2C%20I%20am%20interested%20in%20your%20tile%20services." target="_blank" class="float-wa" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.524 5.844L0 24l6.332-1.496C8.07 23.447 10.003 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.96 0-3.778-.53-5.332-1.449l-.383-.228-3.954.934.992-3.851-.249-.395C2.043 15.108 1.455 13.624 1.455 12 1.455 6.144 6.144 1.455 12 1.455S22.545 6.144 22.545 12 17.856 22.545 12 22.545z"/></svg>
+</a>
+
+<script>
+  // ─── CATALOGUE FILTER ───
+  function filterCat(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.tile-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // ─── WHATSAPP FORM SEND ───
+  function sendWhatsApp() {
+    const name    = document.getElementById('fname').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const address = document.getElementById('faddress').value.trim();
+    const problem = document.getElementById('fproblem').value.trim();
+
+    if (!name && !phone && !problem) {
+      alert('Please fill in at least your name, phone number, and requirement before sending.');
+      return;
+    }
+
+    const msg =
+`🏠 *New Tile Enquiry*
+━━━━━━━━━━━━━━━
+👤 *Name:* ${name || '—'}
+📞 *Phone:* ${phone || '—'}
+📍 *Address:* ${address || '—'}
+🔧 *Requirement:*
+${problem || '—'}
+━━━━━━━━━━━━━━━
+Sent from subhashtileworks.com`;
+
+    const url = 'https://wa.me/919815124756?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  }
+
+  // ─── SCROLL REVEAL ───
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.tile-card, .connect-card, .info-list li').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
